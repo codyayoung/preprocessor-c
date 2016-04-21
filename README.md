@@ -1,2 +1,2 @@
 # preprocessor-c
-Preprocessor Lab in C
+Preprocessor lab in C 
