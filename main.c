@@ -1,4 +1,6 @@
 //Preprocessor Lab
+//Generates preprocessor file for string manipulation.
+//Palomar ID: 008372648
 //Cody Young
 
 #include <stdio.h>
