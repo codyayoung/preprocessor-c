@@ -43,10 +43,7 @@ int main(void) {
 				do
 				{
 					putchar(ch);
-					if (ch == '\\') {
-						putchar(fgetc(finput));
-						ch = fgetc(finput);
-					}
+		
 				} while (ch != q);
 				putchar(ch);
 			}
@@ -56,7 +53,7 @@ int main(void) {
 				if (ch != '*')                  // If not, undo fgetc
 				{
 					putchar(' ');
-					ungetc(ch, finput);
+					fseek(finput, -1, SEEK_CUR);
 				}
 				else
 				{
@@ -71,13 +68,14 @@ int main(void) {
 			else
 			{
 				putchar(ch);
+				fputc(ch, foutput);
 			}
 		}
 
 	}
 
 	p[i] = '\0';
-	fprintf(foutput, "%s\n", p); //Printing residual forward slashes for some reason - need to fix
+	
 	free(p);
 
 	fclose(finput);
